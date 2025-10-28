@@ -21,9 +21,9 @@ Este es un proyecto en desarrollo. El objetivo es construir, junto con ustedes, 
 * **Parte I: Fundamentos de Markdown.** Comenzamos con un análisis detallado de la sintaxis esencial, cubriendo el estándar "CommonMark" y las útiles extensiones de "GitHub Flavored Markdown" (GFM). Esta primera parte les dará todas las herramientas que necesitan para el 90% de sus tareas diarias.
 
 * **Partes Futuras (Próximamente).** A medida que avancemos, añadiremos nuevos capítulos. Estos explorarán temas avanzados como:
-    * Creación de diagramas y flujos de trabajo.
-    * Escritura de fórmulas matemáticas (LaTeX).
-    * Aplicaciones prácticas de Markdown en sus proyectos académicos.
-    * Introducción a herramientas de publicación como Quarto.
+* Creación de diagramas y flujos de trabajo.
+* Escritura de fórmulas matemáticas (LaTeX).
+* Aplicaciones prácticas de Markdown en sus proyectos académicos.
+* Introducción a herramientas de publicación como Quarto.
 
 Espero que encuentren este manual útil y práctico. ¡Comencemos!

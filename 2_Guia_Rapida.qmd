@@ -1,4 +1,4 @@
-1. Introducción al Markdown
+## Introducción al Markdown
 Markdown se define como un lenguaje de marcado ligero diseñado para ser fácil de leer y escribir en texto plano, con la capacidad de convertirse sencillamente a HTML.
 
 
@@ -10,7 +10,7 @@ Archivos: Los documentos son archivos de texto plano, usualmente con la extensi�
 
 Usos Comunes: Se emplea extensamente en GitHub, documentación técnica, blogs, foros y para interactuar con sistemas de IA.
 
-2. Sintaxis Básica (CommonMark)
+## Sintaxis Básica (CommonMark)
 Esta sección cubre los elementos fundamentales del Markdown original, que hoy en día se ha estandarizado en gran medida como "CommonMark".
 
 
@@ -74,7 +74,7 @@ Escapado de Caracteres: Se usa la barra invertida (\) antes de un carácter espe
 
 HTML en Markdown: Se permite incluir código HTML directamente dentro del documento, lo cual es útil para elementos complejos.
 
-3. Sintaxis Extendida de GitHub (GFM)
+## Sintaxis Extendida de GitHub (GFM)
 GitHub Flavored Markdown (GFM) es una extensión de CommonMark que añade funcionalidades útiles, especialmente para desarrolladores.
 
 
@@ -101,7 +101,7 @@ Alertas: Una extensión de las citas (blockquotes) para destacar información. U
 
 
 
-4. Contenido Avanzado
+## Contenido Avanzado
 La guía también menciona sintaxis avanzadas que muchas plataformas, incluido GitHub (y crucialmente, Quarto), han adoptado.
 
 
@@ -113,7 +113,7 @@ Mermaid: Permite crear diagramas y flujos de trabajo (como diagramas de flujo) d
 
 
 
-5. Herramientas y Recursos Adicionales
+## Herramientas y Recursos Adicionales
 
 Hoja de Trucos (Cheatsheet): La página 19 ofrece una tabla resumen muy útil que contrasta la sintaxis clásica y la de GFM.
 
@@ -126,7 +126,7 @@ Este documento es una referencia fundamental. Para un desarrollador que trabaja 
 La Base es Sólida: Toda la "Sintaxis Básica" y la "Sintaxis GFM" (tablas, listas de tareas, notas a pie) son usadas directamente en Quarto.
 
 
-Alertas vs. Callouts: Las "Alertas" de GFM  son el precursor directo de los "Callouts" de Quarto (ej. ::: {.callout-note} ... :::), que usamos constantemente para estructurar documentos técnicos.
+Alertas vs. Callouts: Las "Alertas" de GFM  son el precursor directo de los "Callouts" de Quarto (ej. {.callout-note} ... ), que usamos constantemente para estructurar documentos técnicos.
 
 
 Contenido Avanzado Nativo: LaTeX y Mermaid  son capacidades nativas de Quarto. Saber que se pueden integrar es clave.

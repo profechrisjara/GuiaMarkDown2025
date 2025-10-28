@@ -1,0 +1,429 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrreprt}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+\ifLuaTeX
+  \usepackage{luacolor}
+  \usepackage[soul]{lua-ul}
+\else
+  \usepackage{soul}
+\fi
+
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Guia\_Rapida\_MarckDown},
+  pdfauthor={Tec. Sup. Christopher Jara},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Guia\_Rapida\_MarckDown}
+\author{Tec. Sup. Christopher Jara}
+\date{2027-04-10}
+\begin{document}
+\maketitle
+
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+
+\bookmarksetup{startatroot}
+
+\chapter*{Prefacio}\label{prefacio}
+\addcontentsline{toc}{chapter}{Prefacio}
+
+\markboth{Prefacio}{Prefacio}
+
+¡Bienvenidos al \textbf{Manual Práctico de MarkDown}!
+
+Este libro digital ha sido preparado como material de estudio y guía de
+referencia para ustedes, los estudiantes de tercero de bachillerato de
+la Unidad Educativa ``Carlos Crespi II''.
+
+\section*{¿Por qué aprender
+Markdown?}\label{por-quuxe9-aprender-markdown}
+\addcontentsline{toc}{section}{¿Por qué aprender Markdown?}
+
+\markright{¿Por qué aprender Markdown?}
+
+En el mundo digital actual, la forma en que escribimos y compartimos
+información está en constante evolución. Markdown es un lenguaje que nos
+permite dar formato a nuestros textos (como títulos, negritas, listas e
+imágenes) de una manera increíblemente simple y eficiente, usando solo
+texto plano.
+
+Dominar Markdown no solo les facilitará la toma de apuntes y la
+redacción de documentos técnicos, sino que también es una habilidad
+fundamental en el desarrollo de software (para crear la documentación de
+proyectos), la publicación de blogs y la colaboración en plataformas
+como GitHub. Es una herramienta que les servirá tanto en sus estudios
+actuales como en su futura carrera profesional y universitaria.
+
+\section*{¿Para quién es este libro?}\label{para-quiuxe9n-es-este-libro}
+\addcontentsline{toc}{section}{¿Para quién es este libro?}
+
+\markright{¿Para quién es este libro?}
+
+Este manual está diseñado pensando en ustedes. No se requiere
+experiencia previa. Empezaremos desde los conceptos más básicos,
+asegurando que tengan una base sólida, antes de avanzar hacia temas más
+complejos.
+
+\section*{Estructura de este Libro}\label{estructura-de-este-libro}
+\addcontentsline{toc}{section}{Estructura de este Libro}
+
+\markright{Estructura de este Libro}
+
+Este es un proyecto en desarrollo. El objetivo es construir, junto con
+ustedes, un recurso completo. Por ahora, el libro se estructura de la
+siguiente manera:
+
+\begin{itemize}
+\item
+  \textbf{Parte I: Fundamentos de Markdown.} Comenzamos con un análisis
+  detallado de la sintaxis esencial, cubriendo el estándar
+  ``CommonMark'' y las útiles extensiones de ``GitHub Flavored
+  Markdown'' (GFM). Esta primera parte les dará todas las herramientas
+  que necesitan para el 90\% de sus tareas diarias.
+\item
+  \textbf{Partes Futuras (Próximamente).} A medida que avancemos,
+  añadiremos nuevos capítulos. Estos explorarán temas avanzados como:
+\item
+  Creación de diagramas y flujos de trabajo.
+\item
+  Escritura de fórmulas matemáticas (LaTeX).
+\item
+  Aplicaciones prácticas de Markdown en sus proyectos académicos.
+\item
+  Introducción a herramientas de publicación como Quarto.
+\end{itemize}
+
+Espero que encuentren este manual útil y práctico. ¡Comencemos!
+
+\bookmarksetup{startatroot}
+
+\chapter{Introducción al Markdown}\label{introducciuxf3n-al-markdown}
+
+Markdown se define como un lenguaje de marcado ligero diseñado para ser
+fácil de leer y escribir en texto plano, con la capacidad de convertirse
+sencillamente a HTML.
+
+Sintaxis: Utiliza caracteres simples y fáciles de recordar (como \#, *,
+{[}{]}).
+
+Archivos: Los documentos son archivos de texto plano, usualmente con la
+extensión .md.
+
+Usos Comunes: Se emplea extensamente en GitHub, documentación técnica,
+blogs, foros y para interactuar con sistemas de IA.
+
+\section{Sintaxis Básica
+(CommonMark)}\label{sintaxis-buxe1sica-commonmark}
+
+Esta sección cubre los elementos fundamentales del Markdown original,
+que hoy en día se ha estandarizado en gran medida como ``CommonMark''.
+
+Encabezados: Se admiten seis niveles jerárquicos, definidos por el
+número de almohadillas (\#) al inicio de la línea (ej.
+
+es \# Título 1,
+
+es \#\# Título 2).
+
+Párrafos y Saltos: Los párrafos se separan dejando una línea en blanco
+entre ellos. Para forzar un salto de línea simple (un ), se deben dejar
+dos espacios en blanco al final de una línea antes de presionar enter.
+
+Énfasis:
+
+Negrita: Se logra envolviendo el texto con dobles asteriscos
+(\textbf{texto en negrita}).
+
+Cursiva: Se logra envolviendo el texto con asteriscos simples
+(\emph{texto en cursiva}).
+
+Reglas Horizontales: Se crean usando tres o más asteriscos (***) en una
+línea separada.
+
+Listas:
+
+No Ordenadas: Se inician con -, * o +.
+
+Ordenadas: Se inician con un número seguido de un punto (ej. 1.
+Elemento).
+
+Ambos tipos permiten anidación (sub-listas) mediante indentación.
+
+Enlaces (Hipervínculos): La sintaxis principal es
+\href{https://url.com}{Texto del enlace}.
+
+Imágenes: Similar a los enlaces, pero con una exclamación al inicio:
+\pandocbounded{\includegraphics[keepaspectratio]{url/imagen.jpg}}.
+
+Citas (Blockquotes): Se utiliza el símbolo \textgreater{} al inicio de
+la línea. Se pueden anidar usando múltiples símbolos (ej.
+\textgreater\textgreater).
+
+Código:
+
+En línea (inline): Se envuelve el código con comillas invertidas simples
+(\texttt{código}).
+
+Bloques de código: Se utilizan comillas invertidas triples (```) para
+delimitar bloques multilínea .
+
+Escapado de Caracteres: Se usa la barra invertida () antes de un
+carácter especial de Markdown (ej. *) para evitar que se interprete como
+formato.
+
+HTML en Markdown: Se permite incluir código HTML directamente dentro del
+documento, lo cual es útil para elementos complejos.
+
+\section{Sintaxis Extendida de GitHub
+(GFM)}\label{sintaxis-extendida-de-github-gfm}
+
+GitHub Flavored Markdown (GFM) es una extensión de CommonMark que añade
+funcionalidades útiles, especialmente para desarrolladores.
+
+Tablas: Se crean usando barras verticales (\textbar) para separar
+columnas y guiones (-) para separar la fila del encabezado. Se puede
+controlar la alineación del texto usando dos puntos (:) en la fila de
+guiones (ej. :---: para centrar).
+
+Tachado: Se envuelve el texto con dobles virgulillas (\st{texto
+tachado}).
+
+Listas de Tareas: Permiten crear casillas de verificación. Se usa {[}
+{]} para una tarea pendiente y {[}x{]} para una completada.
+
+Referencias y Menciones (GitHub): Atajos específicos de GitHub, como
+(\textbf{menciones?}) de usuarios y \#número para referenciar Issues o
+Pull Requests.
+
+Notas a pie de página: Permiten añadir aclaraciones. Se usa {[}\^{}1{]}
+en el texto y luego se define la nota con {[}\^{}1{]}: Texto de la
+nota..
+
+Alertas: Una extensión de las citas (blockquotes) para destacar
+información. Usan una sintaxis especial como \textgreater{} {[}!NOTE{]}
+o \textgreater{} {[}!WARNING{]} para crear bloques visuales distintivos.
+
+\section{Contenido Avanzado}\label{contenido-avanzado}
+
+La guía también menciona sintaxis avanzadas que muchas plataformas,
+incluido GitHub (y crucialmente, Quarto), han adoptado.
+
+LaTeX: Se utiliza para renderizar ecuaciones matemáticas complejas. Se
+pueden usar \[...\] para bloques de ecuaciones.
+
+Mermaid: Permite crear diagramas y flujos de trabajo (como diagramas de
+flujo) directamente en Markdown. Esto se logra escribiendo la sintaxis
+de Mermaid dentro de un bloque de código cercado e identificando el
+lenguaje como mermaid.
+
+\section{Herramientas y Recursos
+Adicionales}\label{herramientas-y-recursos-adicionales}
+
+Hoja de Trucos (Cheatsheet): La página 19 ofrece una tabla resumen muy
+útil que contrasta la sintaxis clásica y la de GFM.
+
+Herramientas Recomendadas: La guía concluye sugiriendo editores de texto
+y herramientas. Es notable que Visual Studio Code es la primera
+recomendación, lo cual refuerza su idoneidad para nuestro flujo de
+trabajo con Quarto. También se mencionan Obsidian, Ghostwriter y iA
+Writer.
+
+Conclusión (Perspectiva de Ingeniero Quarto) Este documento es una
+referencia fundamental. Para un desarrollador que trabaja con Quarto en
+VS Code:
+
+La Base es Sólida: Toda la ``Sintaxis Básica'' y la ``Sintaxis GFM''
+(tablas, listas de tareas, notas a pie) son usadas directamente en
+Quarto.
+
+Alertas vs.~Callouts: Las ``Alertas'' de GFM son el precursor directo de
+los ``Callouts'' de Quarto (ej. \{.callout-note\} \ldots{} ), que usamos
+constantemente para estructurar documentos técnicos.
+
+Contenido Avanzado Nativo: LaTeX y Mermaid son capacidades nativas de
+Quarto. Saber que se pueden integrar es clave.
+
+Entorno de Trabajo: La recomendación de VS Code alinea esta guía
+perfectamente con nuestro entorno de desarrollo preferido.
+
+\bookmarksetup{startatroot}
+
+\chapter{Summary}\label{summary}
+
+In summary, this book has no content whatsoever.
+
+\bookmarksetup{startatroot}
+
+\chapter*{References}\label{references}
+\addcontentsline{toc}{chapter}{References}
+
+\markboth{References}{References}
+
+\phantomsection\label{refs}
+
+
+
+
+\end{document}
