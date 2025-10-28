@@ -3,11 +3,11 @@ project:
 
 book:
   title: "Guia_Rapida_MarckDown"
-  author: "Norah Jones"
-  date: "28/10/2025"
+  author: "Tec. Sup. Christopher Jara"
+  date: "28-10-2025"
   chapters:
     - index.qmd
-    - intro.qmd
+    - 2_Guia_Rapida.qmd
     - summary.qmd
     - references.qmd
 

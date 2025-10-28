@@ -1,5 +1,29 @@
-# Preface {.unnumbered}
+# Prefacio {.unnumbered}
 
-This is a Quarto book.
+¡Bienvenidos al **Manual Práctico de MarkDown**!
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+Este libro digital ha sido preparado como material de estudio y guía de referencia para ustedes, los estudiantes de tercero de bachillerato de la Unidad Educativa "Carlos Crespi II".
+
+## ¿Por qué aprender Markdown?
+
+En el mundo digital actual, la forma en que escribimos y compartimos información está en constante evolución. Markdown es un lenguaje que nos permite dar formato a nuestros textos (como títulos, negritas, listas e imágenes) de una manera increíblemente simple y eficiente, usando solo texto plano.
+
+Dominar Markdown no solo les facilitará la toma de apuntes y la redacción de documentos técnicos, sino que también es una habilidad fundamental en el desarrollo de software (para crear la documentación de proyectos), la publicación de blogs y la colaboración en plataformas como GitHub. Es una herramienta que les servirá tanto en sus estudios actuales como en su futura carrera profesional y universitaria.
+
+## ¿Para quién es este libro?
+
+Este manual está diseñado pensando en ustedes. No se requiere experiencia previa. Empezaremos desde los conceptos más básicos, asegurando que tengan una base sólida, antes de avanzar hacia temas más complejos.
+
+## Estructura de este Libro
+
+Este es un proyecto en desarrollo. El objetivo es construir, junto con ustedes, un recurso completo. Por ahora, el libro se estructura de la siguiente manera:
+
+* **Parte I: Fundamentos de Markdown.** Comenzamos con un análisis detallado de la sintaxis esencial, cubriendo el estándar "CommonMark" y las útiles extensiones de "GitHub Flavored Markdown" (GFM). Esta primera parte les dará todas las herramientas que necesitan para el 90% de sus tareas diarias.
+
+* **Partes Futuras (Próximamente).** A medida que avancemos, añadiremos nuevos capítulos. Estos explorarán temas avanzados como:
+    * Creación de diagramas y flujos de trabajo.
+    * Escritura de fórmulas matemáticas (LaTeX).
+    * Aplicaciones prácticas de Markdown en sus proyectos académicos.
+    * Introducción a herramientas de publicación como Quarto.
+
+Espero que encuentren este manual útil y práctico. ¡Comencemos!
